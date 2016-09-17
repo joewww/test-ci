@@ -1,1 +1,1 @@
-docker build -t testenv .
+docker build -t joew/nginx-build .

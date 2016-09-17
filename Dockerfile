@@ -2,9 +2,8 @@ FROM centos:6
 MAINTAINER "Joe Wagner" <joew@joew.net>
 
 # epel repo is needed for nginx
-RUN yum clean all
 RUN yum install -y epel-release
-RUN yum install -y nginx wget
+RUN yum install -y nginx
 
 # Replacements for /etc/nginx/conf.d/default.conf:
 ADD https://raw.githubusercontent.com/joewww/nginx/master/conf/dev.conf /tmp/dev.conf
@@ -21,7 +20,6 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ls -sf /dev/stderr /var/log/nginx/error.log
 
 # Use wrapper script to test env var (dev vs prod)
-#ADD https://github.com/joewww/nginx/blob/master/conf/start-nginx.sh /start-nginx.sh
 ADD https://raw.githubusercontent.com/joewww/nginx/master/conf/start-nginx.sh /start-nginx.sh
 
 #ADD start-nginx.sh /start-nginx.sh

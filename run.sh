@@ -18,4 +18,4 @@ else
   PORT="$2"
 fi
 
-docker run --entrypoint /start-nginx.sh --env ENVIRON=$ENVIRON --env PORT=$PORT testenv
+docker run --entrypoint /start-nginx.sh --env ENVIRON=$ENVIRON --env PORT=$PORT joew/nginx-build
