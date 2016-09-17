@@ -22,7 +22,6 @@ RUN ls -sf /dev/stderr /var/log/nginx/error.log
 # Use wrapper script to test env var (dev vs prod)
 ADD https://raw.githubusercontent.com/joewww/nginx/master/conf/start-nginx.sh /start-nginx.sh
 
-#ADD start-nginx.sh /start-nginx.sh
 RUN chmod +x start-nginx.sh
 RUN /start-nginx.sh
 
