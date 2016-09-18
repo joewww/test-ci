@@ -21,8 +21,10 @@ function test {
   fi
 }
 
-build
-run
-test
+#build
+#run
+#test
+
+shellcheck bin/*
 
 # EOF

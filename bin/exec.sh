@@ -12,8 +12,8 @@ else
   CMD="$1"
 fi
 
-for container in `docker ps -a|awk '{print $1}'|grep -v CONTAINER`;do 
+for container in $(docker ps -a|awk '{print $1}'|grep -v CONTAINER);do 
   echo "Container: $container"
-  docker exec -i -t $container $CMD
+  docker exec -i -t "$container" "$CMD"
   echo
 done

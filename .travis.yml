@@ -9,8 +9,6 @@ before_install:
  
 install:
  - docker build -t joew/nginx-build .
- - docker run --entrypoint /start-nginx.sh --env ENVIRON=dev --env PORT=5000 --name test joew/nginx-build
 
 script:
- - docker ps | grep -q test
  - bin/test.sh
