@@ -6,7 +6,6 @@ services:
 
 before_install:
  - docker pull joew/nginx-build
- - bin/test.sh
  
 install:
  - docker build -t joew/nginx-build .
@@ -14,3 +13,4 @@ install:
 
 script:
  - docker ps | grep -q test
+ - bin/test.sh
