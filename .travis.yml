@@ -1,5 +1,10 @@
-language: ruby
+language: bash
 sudo: required
+
+addons:
+ apt:
+  packages:
+   - shellcheck
 
 services:
  - docker
